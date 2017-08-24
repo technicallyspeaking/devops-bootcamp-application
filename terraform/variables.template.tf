@@ -1,7 +1,7 @@
 variable "project_name" {
   type = "string"
   description = "The name of the project"
-  default = "devops-workshop-student-project-YOUR_FIRST_NAME-YOUR_LAST_NAME"
+  default = "1s-devops-workshop-project-YOUR_FIRST_NAME-YOUR_LAST_NAME"
 }
 
 variable "project_profile" {
