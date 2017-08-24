@@ -1,0 +1,8 @@
+ARG IMAGE_NAME=golang
+ARG IMAGE_TAG=1.9-alpine3.6
+
+FROM $IMAGE_NAME:$IMAGE_TAG
+
+RUN apk update && \
+    apk add --upgrade git && \
+    go get -u github.com/golang/dep
