@@ -1,4 +1,4 @@
 vendor
-.swp
+**/*.swp
 terraform/*tfstate*
 terraform/variables.tf
