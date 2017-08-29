@@ -4,19 +4,17 @@ phases:
   install:
     commands:
       - echo "I'm a little teapot."
-      - go get -u github.com/golang/dep
   pre_build:
     commands:
       - echo "Get to the choppa!"
-      - dep ensure
   build:
     commands:
       - echo "Hello Darkness, my old friend..."
-      - go build
+      - go build -o $CODEBUILD_SRC_DIR/app
   post_build:
     commands:
       - echo "Darth Vader seduced and murdered your father."
       - go test
 artifacts:
   files:
-    app
+   - $CODEBUILD_SRC_DIR/app
