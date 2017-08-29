@@ -1,13 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+        "net/http"
+)
 
 func main() {
-	r := gin.Default()
-	r.GET("/hello", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "world",
-		})
-	})
-	r.Run()
+        http.Handle("/", http.FileServer(http.Dir("./static")))
+        http.ListenAndServe(":3000", nil)
 }
