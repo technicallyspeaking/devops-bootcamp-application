@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+    APP_NAME: "devops-bootcamp-example-app"
+    APP_VERSION: "1.0.0"
+
+phases:
+  install:
+    - go get -u github.com/golang/dep
+  pre_build:
+    - dep ensure
+  build:
+    - go build -o $GOPATH/bin/$APP_NAME-$APP_VERSION
+  post_build:
+    - go test
+artifacts:
+  files:
+    $GOPATH/bin/$APP_NAME-$APP_VERSION

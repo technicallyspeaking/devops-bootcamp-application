@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  golang-runtime:
+    container_name: golang-runtime
+    build:
+      context: .
+      dockerfile: Dockerfile-runtime 
+    depends_on:
+      - golang-buildrunner
+  golang-buildrunner:
+    container_name: golang-buildrunner
+    build:
+      context: .
+      dockerfile: Dockerfile-buildrunner

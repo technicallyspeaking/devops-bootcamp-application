@@ -1,0 +1,7 @@
+ARG IMAGE_NAME=alpine
+ARG IMAGE_TAG=3.6
+
+FROM $IMAGE_NAME:$IMAGE_TAG
+
+RUN apk update && \
+    apk add --upgrade supervisor

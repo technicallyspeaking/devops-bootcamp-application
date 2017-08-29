@@ -1,0 +1,4 @@
+vendor
+**/*.swp
+terraform/*tfstate*
+terraform/config.tfvars
