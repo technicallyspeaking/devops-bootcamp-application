@@ -1,3 +1,4 @@
+app.go
 vendor
 **/*.swp
 terraform/*tfstate*

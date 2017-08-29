@@ -8,16 +8,20 @@ env:
 phases:
   install:
     commands:
+      - echo "I'm a little teapot."
       - go get -u github.com/golang/dep
   pre_build:
     commands:
+      - echo "Get to the choppa!"
       - dep ensure
   build:
     commands:
-      - go build -o $GOPATH/bin/$APP_NAME-$APP_VERSION
+      - echo "Hello Darkness, my old friend..."
+      - go build
   post_build:
     commands:
+      - echo "Darth Vader seduced and murdered your father."
       - go test
 artifacts:
   files:
-    $GOPATH/bin/$APP_NAME-$APP_VERSION
+    app
